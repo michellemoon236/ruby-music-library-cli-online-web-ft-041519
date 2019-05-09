@@ -6,16 +6,21 @@ class Song
   
   def initialize(name, artist=nil, genre=nil)
     @name = name
-    if artist == nil 
-      @artist = artist
-    else
-      self.artist=(artist)
-    end
-    if genre == nil 
-      @genre = genre
-    else
-      self.genre=(genre)
-    end
+    self.artist=artist if artist
+    self.genre=genre if genre
+    # if artist != nil
+    #   @artist = artist
+    # end
+    # if artist == nil 
+    #   @artist = artist
+    # else
+    #   self.artist=(artist)
+    # end
+    # if genre == nil 
+    #   @genre = genre
+    # else
+    #   self.genre=(genre)
+    # end
   end 
   
   def save
@@ -26,6 +31,7 @@ class Song
     song = Song.new(name)
     song.save
     song
+    #new(name).tap { |s| s.save }
   end
   
   def artist=(artist)
